@@ -48,6 +48,8 @@ Aucune IA générative n'est acceptée au registre, même pour un usage secondai
 - Le serveur **n'a aucun secret ni aucun droit propre** : il vérifie le jeton (ES256, JWKS du projet, émetteur,
   expiration, `client_id`), puis appelle les fonctions de la base avec le jeton de l'artiste. Crédits, droits et
   état des dossiers sont contrôlés par la base, exactement comme sur la page de dépôt.
+- **Côté base, un jeton OAuth n'ouvre que les appels de ce MCP et du [MCP d'ANT-i](https://github.com/Win-Logic-Blue-Roses/anti-mcp)** :
+  achats, paiements, retraits, coordonnées bancaires, contrats, documents et console restent fermés à tout assistant.
 - Transport « Streamable HTTP », sans état (réponses JSON). 60 appels par minute et par compte.
 - Suivi : les journaux notent le compte, l'application cliente et l'outil appelé, jamais le contenu des dossiers.
 
