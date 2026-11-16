@@ -3,7 +3,12 @@
   "name": "uman-registre-mcp",
   "main": "src/index.js",
   "compatibility_date": "2026-10-25",
-  "routes": [{ "pattern": "mcp.u-man.art", "custom_domain": true }],
+  // Domaine personnalisé (DNS) + route précise : sans elle, la route « *.u-man.art/* » du Worker u-man (anciennes
+  // adresses d'artistes, 301) passe avant le domaine personnalisé. La route la plus précise l'emporte.
+  "routes": [
+    { "pattern": "mcp.u-man.art", "custom_domain": true },
+    { "pattern": "mcp.u-man.art/*", "zone_name": "u-man.art" }
+  ],
   "workers_dev": false,
   // Valeurs publiques : adresse du projet Supabase et clé « publishable » (faite pour être publique ; la sécurité
   // repose sur les règles de la base et sur le jeton de l'artiste).
