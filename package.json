@@ -1,0 +1,14 @@
+{
+  "name": "uman-registre-mcp",
+  "version": "1.0.0",
+  "description": "Serveur MCP distant du registre U-MAN Art « Processus humain documenté » : les artistes indexent leurs œuvres depuis leur assistant IA.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "dev": "npx --yes wrangler@4 dev",
+    "deploy": "npm test && npx --yes wrangler@4 deploy"
+  },
+  "engines": { "node": ">=20" }
+}
