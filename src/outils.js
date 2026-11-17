@@ -26,7 +26,9 @@ export function coutEnvoi(d, credits) {
   if (d.paye_par) return { mode: "deja_paye", texte: "Déjà payé : un nouvel envoi après complément est gratuit." };
   const f = credits?.forfait;
   if (!d.collection_id && f && f.utilises < f.mensuel) {
-    return { mode: "forfait", texte: `Compris dans le forfait du mois des artistes sous contrat (${f.utilises} sur ${f.mensuel} utilisés).` };
+    return { mode: "forfait", texte: f.type === "contrat"
+      ? `Compris dans le forfait du mois des artistes sous contrat (${f.utilises} sur ${f.mensuel} utilisés).`
+      : `Gratuit : l'indexation offerte ce mois-ci à chaque compte (${f.utilises} sur ${f.mensuel} utilisée, non cumulable).` };
   }
   if (d.collection_id) return { mode: "collection", texte: "Un crédit de la collection (payé par l'institution)." };
   if ((credits?.solde ?? 0) >= 1) return { mode: "credit", texte: `Un crédit (solde actuel : ${credits.solde}).` };
@@ -85,7 +87,7 @@ export const OUTILS = [
   {
     name: "mes_credits",
     title: "Crédits d'indexation",
-    description: "Solde de crédits d'indexation au registre U-MAN Art, forfait mensuel des artistes sous contrat (3 œuvres par mois, non cumulable), lots et dates d'expiration. Un dossier envoyé au contrôle coûte un crédit ou une œuvre du forfait.",
+    description: "Solde de crédits d'indexation au registre U-MAN Art, œuvres gratuites du mois (forfait.type « offert » : 1 par mois pour chaque compte ; « contrat » : 3 par mois pour un artiste sous contrat ; non cumulables), lots et dates d'expiration. Un dossier envoyé au contrôle utilise d'abord l'œuvre gratuite du mois, sinon un crédit.",
     inputSchema: { type: "object", properties: {}, additionalProperties: false },
     annotations: LECTURE,
     async faire(db) {

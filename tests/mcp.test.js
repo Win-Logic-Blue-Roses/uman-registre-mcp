@@ -102,6 +102,10 @@ test("coût de l'envoi : forfait, crédit, déjà payé, insuffisant", () => {
   assert.equal(coutEnvoi({}, { solde: 0, forfait: { mensuel: 3, utilises: 1 } }).mode, "forfait");
   assert.equal(coutEnvoi({}, { solde: 2, forfait: { mensuel: 3, utilises: 3 } }).mode, "credit");
   assert.equal(coutEnvoi({}, { solde: 0, forfait: null }).mode, "insuffisant");
+  const offert = coutEnvoi({}, { solde: 0, forfait: { type: "offert", mensuel: 1, utilises: 0 } });
+  assert.equal(offert.mode, "forfait");
+  assert.match(offert.texte, /offerte ce mois-ci/);
+  assert.equal(coutEnvoi({}, { solde: 0, forfait: { type: "offert", mensuel: 1, utilises: 1 } }).mode, "insuffisant");
   assert.equal(coutEnvoi({ collection_id: "x" }, { solde: 0, forfait: { mensuel: 3, utilises: 0 } }).mode, "collection");
 });
 

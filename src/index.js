@@ -13,7 +13,7 @@ export const VERSIONS = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SERVEUR = { name: "uman-registre", title: "Registre U-MAN Art", version: "1.0.0", websiteUrl: "https://u-man.art/registre/" };
 const CONSIGNES = "Registre « Processus humain documenté » de U-MAN Art (groupe Win-Logic). Il documente le processus de création d'une œuvre faite par un humain ; ce n'est ni une certification ni une expertise. "
   + "Parcours : mes_credits, mes_oeuvres, preparer_dossier, ajouter_piece (2 pièces au moins), puis soumettre_dossier. "
-  + "L'envoi coûte un crédit ou une œuvre du forfait : montrez toujours le coût et les deux déclarations à l'artiste et attendez son accord explicite. "
+  + "L'envoi utilise l'œuvre gratuite du mois (une par compte, trois sous contrat) ou un crédit : montrez toujours le coût et les deux déclarations à l'artiste et attendez son accord explicite. "
   + "N'inventez jamais une étape ou une pièce : tout vient de l'artiste. Aucune IA générative n'est acceptée au registre, même en usage secondaire.";
 
 const CORS = {

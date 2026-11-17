@@ -18,19 +18,19 @@ Adresse : **`https://mcp.u-man.art/mcp`**
    sur **Autoriser**.
 3. C'est tout. Vous retirez l'accès quand vous voulez depuis votre assistant.
 
-Il faut un compte U-MAN Art. L'envoi d'un dossier au contrôle utilise **un crédit**, ou une œuvre du forfait mensuel
+Il faut un compte U-MAN Art. Chaque compte documente **une œuvre par mois gratuitement** (non cumulable) ; au-delà, l'envoi d'un dossier au contrôle utilise **un crédit**, ou une œuvre du forfait mensuel
 des artistes sous contrat (3 par mois). Tarifs : <https://u-man.art/registre/offres/>.
 
 ## Outils
 
 | Outil | Rôle | Coût |
 |---|---|---|
-| `mes_credits` | solde, forfait du mois, lots et expiration | gratuit |
+| `mes_credits` | solde, œuvre offerte ou forfait du mois, lots et expiration | gratuit |
 | `mes_oeuvres` | œuvres de votre page d'artiste, avec leur fiche au registre | gratuit |
 | `mes_dossiers` | dossiers de dépôt et ce qu'il leur manque | gratuit |
 | `preparer_dossier` | crée ou complète un brouillon (depuis une œuvre ou de zéro) | gratuit |
 | `ajouter_piece` | ajoute un croquis, une étape, des calques, une vidéo… (adresse https ou base64) | gratuit |
-| `soumettre_dossier` | envoie au contrôle de l'équipe | **1 crédit** (ou forfait) |
+| `soumettre_dossier` | envoie au contrôle de l'équipe | œuvre gratuite du mois, sinon **1 crédit** |
 | `consulter_fiche` | lit une fiche publique `UM-XXXXX` | gratuit |
 
 `soumettre_dossier` n'envoie rien tant que l'artiste n'a pas accepté, dans la conversation, les deux déclarations
